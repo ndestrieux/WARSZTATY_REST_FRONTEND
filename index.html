@@ -11,34 +11,56 @@
 </head>
 <body>
     <div class="container">
-            <form>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Author</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" name="author">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Title</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" name="title">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput3">ISBN</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput3" name="isbn">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput4">Publisher</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput4" name="publisher">
-                </div>
-            </form>
+        <h2>
+            Add new book to database:
+        </h2>
+        <form id="newBook" data-type="POST">
+            <div class="form-group">
+                <label for="authorInput">Author</label>
+                <input type="text" class="form-control" id="authorInput" name="author">
+            </div>
+            <div class="form-group">
+                <label for="titleInput">Title</label>
+                <input type="text" class="form-control" id="titleInput" name="title">
+            </div>
+            <div class="form-group">
+                <label for="isbnInput">ISBN</label>
+                <input type="text" class="form-control" id="isbnInput" name="isbn">
+            </div>
+            <div class="form-group">
+                <label for="publisherInput">Publisher</label>
+                <input type="text" class="form-control" id="publisherInput" name="publisher">
+            </div>
+            <div class="form-group">
+                <label for="genreInput">Genre</label>
+                <select class="form-control" id="genreInput" name="genre">
+                    <option value="1">Romans</option>
+                    <option value="2">Obyczajowa</option>
+                    <option value="3">Sci-fi i fantasy</option>
+                    <option value="4">Literatura faktu</option>
+                    <option value="5">Popularnonaukowa</option>
+                    <option value="6">Poradnik</option>
+                    <option value="7">Kryminał, sensacja</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" id="addNewBook" name="submit" value="Add new book">
+            </div>
+        </form>
     </div>
     <div class="container">
         <hr>
     </div>
     <div class="container">
+        <h2>
+            Book list:
+        </h2>
         <table class="table">
             <thead class="table thead-dark">
                 <tr>
                     <th>Author</th>
                     <th>Title</th>
+                    <th style="width:10%">&nbsp;</th>
                     <th style="width:10%">&nbsp;</th>
                 </tr>
             </thead>
