@@ -93,10 +93,8 @@ $('document').ready(function()  {
         
                 const type = form.data("type")
                 const formData = form.serialize();
-                const bookTitle = $("input[name=title]").val()
         
                 ajaxCall(url, type, formData).done(function() {
-                    alert(`Book ${bookTitle} added to database`);
                     window.location.reload()
                 });
                 
@@ -109,11 +107,10 @@ $('document').ready(function()  {
 
                 const type = $(this).data("type");
                 const actionUrl = url + $(this).data("id");
-                const bookTitle = $(this).closest("tr")[0].children[1].textContent;
+                const trDelete = $(this).closest("tr");
 
-                ajaxCall(actionUrl, type).done(function(book)   {
-                    alert(`Book ${bookTitle} deleted from database`);
-                    window.location.reload()
+                ajaxCall(actionUrl, type).done(function()   {
+                    trDelete.remove();
                 });
 
             });
