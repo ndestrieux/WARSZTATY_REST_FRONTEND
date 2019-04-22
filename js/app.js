@@ -102,7 +102,6 @@ $('document').ready(function()  {
                     tr.append($(`<td><button class="delete btn btn-danger" data-type="DELETE" data-id="${element.id}">delete</button></td>`))
                     
                     tbody.append(tr);
-                    // window.location.reload()
                 });
                 
             });
