@@ -94,8 +94,15 @@ $('document').ready(function()  {
                 const type = form.data("type")
                 const formData = form.serialize();
         
-                ajaxCall(url, type, formData).done(function() {
-                    window.location.reload()
+                ajaxCall(url, type, formData).done(function(element) {
+                    var tr = $(`<tr class="list">`);
+                    tr.append($(`<td>${element.author}</td>`))
+                    tr.append($(`<td>${element.title}</td>`))
+                    tr.append($(`<td><button class="details btn btn-default" data-type="GET" data-id="${element.id}">show</button></td>`))
+                    tr.append($(`<td><button class="delete btn btn-danger" data-type="DELETE" data-id="${element.id}">delete</button></td>`))
+                    
+                    tbody.append(tr);
+                    // window.location.reload()
                 });
                 
             });
